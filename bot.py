@@ -62,8 +62,8 @@ while True:
         balance = w3.eth.get_balance(w3.eth.default_account)
         timestamp = w3.eth.getBlock('latest').timestamp
         deadline = timestamp + 60 * 30
-        avax_amount = w3.toWei(random.uniform(0.2,1), 'ether')
-        usdc_amount = w3.toWei(random.uniform(0.2,1), 'ether')
+        avax_amount = w3.toWei(random.uniform(0.2,10), 'ether')
+        usdc_amount = w3.toWei(random.uniform(0.2,10), 'ether')
         if balance >= w3.toWei(2, 'ether'):
             tx = avax_usdc(avax_amount, deadline)
             print("Swapping {} AVAX for {} USDC".format(w3.fromWei(avax_amount,'ether'), w3.fromWei(usdc_amount,'ether')))
